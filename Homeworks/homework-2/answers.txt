@@ -1,0 +1,23 @@
+CS 2200 Spring 2024
+Homework 2
+
+Name: Aaryan Potdar
+GT Username: 903795148
+
+Question 1
+----------
+In LC 3300, the JALR instruction performs two fucntions. 
+First, the incremented PC (PC+1) is stored into Link Register ($RA). 
+Second, PC is loaded with address stored in Target Resgister ($AT).
+The computer continues execution at the new PC from $AT.
+
+First part can be replicated using the function:
+lea $ra, 1      ! $ra <= PC* + offset(1)
+                ! we need to go to the line after BEQ hence, add an offset of 1
+
+Second part:
+beq $zero, $zero, target     ! target is a label holding the target address
+
+Final assembly code:
+lea $ra, 1
+beq $zero, $zero, target
